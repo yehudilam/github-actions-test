@@ -10,13 +10,16 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Close branch pipeline
-          run: echo "close branch pipeline"
+          run: echo 
+
+        - name: REF
+          run: echo "${{ github.ref}}"
 
         - name: head_ref
-          run: echo "${{ env.GITHUB_HEAD_REF }}"
+          run: echo "${{ github.HEAD_REF }}"
 
         - name: head_ref
-          run: echo "${{ env.GITHUB_BASE_REF }}"
+          run: echo "${{ github.BASE_REF }}"
 
   if_merged:
     if: github.event.pull_request.merged == true
