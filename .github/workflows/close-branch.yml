@@ -1,4 +1,4 @@
-name: Close branch pipeline
+name: Close PR pipeline
 
 on:
   pull_request:
@@ -9,8 +9,8 @@ jobs:
       name: Tear down
       runs-on: ubuntu-latest
       steps:
-        - name: Close branch pipeline
-          run: echo 
+        - name: On Pull request closed
+          run: echo "On Pull request closed"
 
         - name: REF
           run: echo "${{ github.ref}}"
@@ -18,7 +18,7 @@ jobs:
         - name: head_ref
           run: echo "${{ github.HEAD_REF }}"
 
-        - name: head_ref
+        - name: base_ref
           run: echo "${{ github.BASE_REF }}"
 
   if_merged:

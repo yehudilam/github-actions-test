@@ -1,4 +1,4 @@
-name: Close branch pipeline
+name: Merge to main pipeline
 
 on:
   push:
@@ -9,12 +9,12 @@ jobs:
     name: Tear down
     runs-on: ubuntu-latest
     steps:
-      - name: Close branch pipeline
-        run: echo "close branch pipeline"
+      - name: On Push to main
+        run: echo "On Push to main"
 
       - name: REF
         run: echo "${{ github.ref}}"        
-        
+
       - name: head_ref
         run: echo "${{ github.HEAD_REF }}"
 

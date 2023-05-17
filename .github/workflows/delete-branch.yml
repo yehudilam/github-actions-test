@@ -1,4 +1,4 @@
-name: Close branch pipeline
+name: Delete branch pipeline
 
 on:
   delete:
@@ -8,5 +8,5 @@ jobs:
       name: Tear down - Delete
       runs-on: ubuntu-latest
       steps:
-        - name: Delete branch pipeline
-          run: echo "delete branch"
+        - name: On delete branch
+          run: echo "On delete branch"
