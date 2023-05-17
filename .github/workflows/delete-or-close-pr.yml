@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: On Delete or close PR
         run: echo "On Delete or close PR"
-        
+
       - name: REF
         run: echo "${{ github.ref}}"
 
@@ -20,4 +20,16 @@ jobs:
         run: echo "${{ github.HEAD_REF }}"
 
       - name: base_ref
-        run: echo "${{ github.BASE_REF }}"  
+        run: echo "${{ github.BASE_REF }}"
+
+  delete_if:
+    name: Delete If
+    runs-on: ubuntu-latest
+    if: github.event.ref_type == 'branch'
+    steps:
+      - name: event ref type
+        run: echo "${{ github.event.ref_type }}"
+
+      - name: Event Ref
+        run: echo "${{ github.event.ref }}"
+
