@@ -22,6 +22,12 @@ jobs:
       - name: base_ref
         run: echo "${{ github.BASE_REF }}"
 
+      - name: event ref type
+        run: echo "${{ github.event.ref_type }}"
+
+      - name: Event Ref
+        run: echo "${{ github.event.ref }}"
+
   delete_if:
     name: Delete If
     runs-on: ubuntu-latest
