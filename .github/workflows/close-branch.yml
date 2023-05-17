@@ -6,20 +6,20 @@ on:
 
 jobs:
   build:
-      name: Tear down
-      runs-on: ubuntu-latest
-      steps:
-        - name: On Pull request closed
-          run: echo "On Pull request closed"
+    name: Tear down
+    runs-on: ubuntu-latest
+    steps:
+      - name: On Pull request closed
+        run: echo "On Pull request closed"
 
-        - name: REF
-          run: echo "${{ github.ref}}"
+      - name: REF
+        run: echo "${{ github.ref}}"
 
-        - name: head_ref
-          run: echo "${{ github.HEAD_REF }}"
+      - name: head_ref
+        run: echo "${{ github.HEAD_REF }}"
 
-        - name: base_ref
-          run: echo "${{ github.BASE_REF }}"
+      - name: base_ref
+        run: echo "${{ github.BASE_REF }}"
 
   if_merged:
     if: github.event.pull_request.merged == true

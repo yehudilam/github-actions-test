@@ -1,17 +1,18 @@
-name: PR pipeline
+name: Delete or Close PR
 
 on:
   pull_request:
-      types: [opened, synchronize, reopened]
+    types: [closed]
+  delete:
 
 jobs:
   build:
-    name: Build PR
+    name: Delete or Close PR
     runs-on: ubuntu-latest
     steps:
-      - name: PR pipeline
-        run: echo "PR pipeline"
-
+      - name: On Delete or close PR
+        run: echo "On Delete or close PR"
+        
       - name: REF
         run: echo "${{ github.ref}}"
 
@@ -20,4 +21,3 @@ jobs:
 
       - name: base_ref
         run: echo "${{ github.BASE_REF }}"  
-          
