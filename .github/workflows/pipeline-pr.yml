@@ -11,3 +11,13 @@ jobs:
       steps:
         - name: PR pipeline
           run: echo "PR pipeline"
+
+        - name: REF
+          run: echo "${{ github.ref}}"
+
+        - name: head_ref
+          run: echo "${{ github.HEAD_REF }}"
+  
+        - name: base_ref
+          run: echo "${{ github.BASE_REF }}"  
+          

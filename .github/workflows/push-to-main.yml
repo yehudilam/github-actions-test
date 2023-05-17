@@ -6,8 +6,17 @@ on:
 
 jobs:
   build:
-      name: Tear down
-      runs-on: ubuntu-latest
-      steps:
-        - name: Close branch pipeline
-          run: echo "close branch pipeline"
+    name: Tear down
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close branch pipeline
+        run: echo "close branch pipeline"
+
+      - name: REF
+        run: echo "${{ github.ref}}"        
+        
+      - name: head_ref
+        run: echo "${{ github.HEAD_REF }}"
+
+      - name: head_ref
+        run: echo "${{ github.BASE_REF }}"  
