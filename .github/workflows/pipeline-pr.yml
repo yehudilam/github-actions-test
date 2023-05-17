@@ -1,0 +1,13 @@
+name: PR pipeline
+
+on:
+  pull_request:
+      types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+      name: Build PR
+      runs-on: ubuntu-latest
+      steps:
+        - name: PR pipeline
+          run: echo "PR pipeline"

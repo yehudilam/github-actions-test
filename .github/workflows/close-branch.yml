@@ -1,0 +1,13 @@
+name: Close branch pipeline
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  build:
+      name: Tear down
+      runs-on: ubuntu-latest
+      steps:
+        - name: Close branch pipeline
+          run: echo "close branch pipeline"

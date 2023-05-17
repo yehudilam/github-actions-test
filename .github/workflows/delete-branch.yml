@@ -1,0 +1,12 @@
+name: Close branch pipeline
+
+on:
+  delete:
+
+jobs:
+  build:
+      name: Tear down - Delete
+      runs-on: ubuntu-latest
+      steps:
+        - name: Delete branch pipeline
+          run: echo "delete branch"
