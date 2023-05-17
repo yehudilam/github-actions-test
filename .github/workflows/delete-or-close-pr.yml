@@ -35,7 +35,9 @@ jobs:
     steps:
       - name: event ref type
         run: echo "${{ github.event.ref_type }}"
+        # "branch"
 
       - name: Event Ref
         run: echo "${{ github.event.ref }}"
+        # deleted branch name
 
