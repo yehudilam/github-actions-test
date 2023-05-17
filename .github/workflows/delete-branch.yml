@@ -1,12 +1,21 @@
-name: Close branch pipeline
+name: Delete branch pipeline
 
 on:
   delete:
 
 jobs:
   build:
-      name: Tear down - Delete
-      runs-on: ubuntu-latest
-      steps:
-        - name: Delete branch pipeline
-          run: echo "delete branch"
+    name: Tear down - Delete
+    runs-on: ubuntu-latest
+    steps:
+      - name: On delete branch
+        run: echo "On delete branch"
+        
+      - name: REF
+        run: echo "${{ github.ref}}"
+
+      - name: head_ref
+        run: echo "${{ github.HEAD_REF }}"
+
+      - name: base_ref
+        run: echo "${{ github.BASE_REF }}"  
